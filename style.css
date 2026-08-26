@@ -1,0 +1,1000 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(76, 9, 9, 0.55),
+            rgba(76, 9, 9, 0.55)
+        ),
+        url("background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    background:
+        rgba(15, 15, 15, 0.78);
+
+    backdrop-filter:
+        blur(14px);
+
+    color: white;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    z-index: 1000;
+}
+
+
+.os-name {
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    font-size: 14px;
+}
+
+
+.football-mode {
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+#clock {
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+.desktop {
+
+    width: 100%;
+
+    height: 100vh;
+}
+
+
+/* =========================
+   DESKTOP ICONS
+========================= */
+
+.desktop-apps {
+
+    position: absolute;
+
+    top: 82px;
+
+    left: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.app-icon {
+
+    width: 105px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    color: white;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        0.2s;
+}
+
+
+.app-icon:hover {
+
+    background:
+        rgba(255,255,255,0.15);
+
+    transform:
+        scale(1.05);
+}
+
+
+.app-icon img {
+
+    width: 64px;
+
+    height: 64px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    display: block;
+
+    margin: auto;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.4);
+}
+
+
+.app-icon p {
+
+    margin:
+        7px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   TIMELINE ICON
+========================= */
+
+.project-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 34px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #222,
+            #555
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.4);
+}
+
+
+/* =========================
+   WINDOWS
+========================= */
+
+.window {
+
+    position: absolute;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 24px;
+
+    background:
+        rgba(20,20,20,0.94);
+
+    color: white;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.6);
+
+    backdrop-filter:
+        blur(12px);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   WELCOME WINDOW
+========================= */
+
+.welcome-window {
+
+    width: 900px;
+
+    top: 120px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   WINDOW HEADER
+========================= */
+
+.window-header {
+
+    width: 100%;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 18px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    cursor: grab;
+
+    user-select: none;
+
+    font-weight: bold;
+}
+
+
+.window-header:active {
+
+    cursor: grabbing;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-button {
+
+    width: 15px;
+
+    height: 15px;
+
+    border-radius: 50%;
+
+    background:
+        #ff5f57;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+
+.close-button:hover {
+
+    transform:
+        scale(1.2);
+
+    box-shadow:
+        0 0 12px
+        rgba(255,95,87,0.7);
+}
+
+
+/* =========================
+   WELCOME CONTENT
+========================= */
+
+.window-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 38px;
+}
+
+
+.welcome-image {
+
+    width: 320px;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.45);
+}
+
+
+.welcome-text {
+
+    flex: 1;
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    background:
+        rgba(255,255,255,0.1);
+}
+
+
+h1 {
+
+    font-size: 44px;
+
+    margin:
+        14px 0 8px;
+}
+
+
+h2 {
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    opacity: 0.7;
+}
+
+
+p {
+
+    line-height: 1.6;
+
+    opacity: 0.72;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 18px;
+
+    padding:
+        13px 23px;
+
+    border: none;
+
+    border-radius:
+        12px;
+
+    background: white;
+
+    color: black;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+
+button:hover {
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================
+   JOURNAL WINDOW
+========================= */
+
+.journal-window {
+
+    width: 850px;
+
+    height: 560px;
+
+    top: 100px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: none;
+
+    z-index: 3;
+}
+
+
+.journal-content {
+
+    display: flex;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 10px;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   JOURNAL SIDEBAR
+========================= */
+
+.journal-sidebar {
+
+    width: 210px;
+
+    padding: 8px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    overflow-y: auto;
+}
+
+
+.note-item {
+
+    padding: 12px;
+
+    margin-bottom: 8px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+
+.note-item:hover {
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+.note-item.active {
+
+    background:
+        rgba(255,255,255,0.2);
+}
+
+
+.note-item-title {
+
+    margin: 0;
+
+    font-weight: bold;
+}
+
+
+.note-item-date {
+
+    margin:
+        5px 0 0;
+
+    font-size: 11px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================
+   NOTE AREA
+========================= */
+
+.note-area {
+
+    flex: 1;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    color: #171717;
+
+    overflow-y: auto;
+}
+
+
+.note-area h2 {
+
+    color: #171717;
+
+    margin-top: 0;
+
+    font-size: 28px;
+
+    opacity: 1;
+}
+
+
+.note-area p {
+
+    color: #333;
+
+    opacity: 1;
+
+    line-height: 1.7;
+}
+
+
+.note-area blockquote {
+
+    margin:
+        25px 0;
+
+    padding:
+        15px 20px;
+
+    border-left:
+        4px solid #777;
+
+    background:
+        #eeeeee;
+}
+
+
+/* =========================
+   CR7 TIMELINE WINDOW
+========================= */
+
+.project-window {
+
+    width: 850px;
+
+    height: 600px;
+
+    top: 90px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: none;
+
+    z-index: 4;
+}
+
+
+/* =========================
+   TIMELINE CONTENT
+========================= */
+
+.timeline-content {
+
+    flex: 1;
+
+    padding:
+        30px 45px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================
+   TIMELINE TITLE
+========================= */
+
+.timeline-title {
+
+    margin-bottom: 28px;
+}
+
+
+.timeline-badge {
+
+    display: inline-block;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.timeline-title h1 {
+
+    font-size: 38px;
+
+    margin:
+        12px 0 3px;
+}
+
+
+.timeline-title p {
+
+    margin: 0;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+
+    position: relative;
+
+    margin-left: 35px;
+
+    padding-left: 35px;
+}
+
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            rgba(255,255,255,0.15)
+        );
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+
+.timeline-item {
+
+    position: relative;
+
+    margin-bottom: 28px;
+}
+
+
+.timeline-dot {
+
+    position: absolute;
+
+    left: -45px;
+
+    top: 18px;
+
+    width: 17px;
+
+    height: 17px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border:
+        4px solid #333;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255,255,255,0.15);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   YEAR
+========================= */
+
+.timeline-year {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   TIMELINE CARD
+========================= */
+
+.timeline-card {
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+
+.timeline-card:hover {
+
+    transform:
+        translateX(5px);
+
+    background:
+        rgba(255,255,255,0.12);
+}
+
+
+.timeline-card h2 {
+
+    margin:
+        0 0 7px;
+
+    color: white;
+
+    font-size: 21px;
+
+    opacity: 1;
+}
+
+
+.timeline-card p {
+
+    margin: 0;
+
+    color: #bbb;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CLUB TAG
+========================= */
+
+.timeline-tag {
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding:
+        5px 10px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    font-size: 11px;
+
+    color: #ddd;
+}
+
+
+/* =========================
+   FINAL LEGACY CARD
+========================= */
+
+.timeline-final {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.14),
+            rgba(255,255,255,0.05)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+}
+
+
+.timeline-final h2 {
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        rgba(255,255,255,0.04);
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255,255,255,0.2);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .welcome-window,
+    .journal-window,
+    .project-window {
+
+        width: 90%;
+    }
+
+
+    .window-content {
+
+        gap: 20px;
+    }
+
+
+    .welcome-image {
+
+        width: 40%;
+
+        height: 200px;
+    }
+
+}
