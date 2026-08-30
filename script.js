@@ -266,20 +266,20 @@ function dragElement(element) {
 
         e.preventDefault();
 
-        // Bring window to the front
         handleWindowTap(element);
 
         const rect = element.getBoundingClientRect();
 
-        // Remove the centering transform
+        element.style.marginLeft = "0px";
+
         element.style.transform = "none";
 
-        // Keep the window exactly where it already is
         element.style.left = rect.left + "px";
         element.style.top = rect.top + "px";
 
         startX = e.clientX;
         startY = e.clientY;
+
         startLeft = rect.left;
         startTop = rect.top;
 
@@ -291,7 +291,7 @@ function dragElement(element) {
             let newTop =
                 startTop + (e.clientY - startY);
 
-            // Keep the window on the screen
+            
             const maxLeft =
                 window.innerWidth - element.offsetWidth;
 
@@ -341,9 +341,7 @@ function dragElement(element) {
 
 dragElement(welcomeScreen);
 dragElement(journalScreen);
-dragElement(projectScreen);
-
-/* =========================
+dragElement(projectScreen);/* =========================
    CR7 JOURNAL
 ========================= */
 
