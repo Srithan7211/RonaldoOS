@@ -1,1000 +1,437 @@
-/* =========================
-   GENERAL
-========================= */
-
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 body {
-
-    margin: 0;
-
-    min-height: 100vh;
-
-    overflow: hidden;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background:
-        linear-gradient(
-            rgba(76, 9, 9, 0.55),
-            rgba(76, 9, 9, 0.55)
-        ),
-        url("background.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
 }
 
-
-/* =========================
-   TOP BAR
-========================= */
-
+/* top navigation bar */
 .top-bar {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 60px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 28px;
-
-    background:
-        rgba(15, 15, 15, 0.78);
-
-    backdrop-filter:
-        blur(14px);
-
-    color: white;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.12);
-
-    z-index: 1000;
+  background-color: rgba(15, 15, 15, 0.9);
+  color: white;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: 1px solid #444;
+  z-index: 1000;
 }
-
 
 .os-name {
-
-    font-size: 19px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    user-select: none;
+  font-weight: bold;
+  font-size: 19px;
+  cursor: pointer;
 }
-
 
 .status {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 22px;
-
-    font-size: 14px;
+  display: flex;
+  align-items: center;
 }
-
 
 .football-mode {
-
-    padding:
-        7px 13px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,0.12);
+  background-color: #3b3737;
+  padding: 7px 13px;
+  border-radius: 20px;
+  margin-right: 18px;
 }
-
 
 #clock {
-
-    font-size: 15px;
-
-    font-weight: bold;
+  font-weight: bold;
+  font-size: 15px;
 }
-
-
-/* =========================
-   DESKTOP
-========================= */
 
 .desktop {
-
-    width: 100%;
-
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
-
-/* =========================
-   DESKTOP ICONS
-========================= */
-
+/* icons on the desktop */
 .desktop-apps {
-
-    position: absolute;
-
-    top: 82px;
-
-    left: 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
+  position: absolute;
+  top: 82px;
+  left: 20px;
 }
-
 
 .app-icon {
-
-    width: 105px;
-
-    padding: 10px;
-
-    text-align: center;
-
-    border-radius: 16px;
-
-    color: white;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    transition:
-        0.2s;
+  width: 105px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 12px;
+  border-radius: 14px;
 }
-
 
 .app-icon:hover {
-
-    background:
-        rgba(255,255,255,0.15);
-
-    transform:
-        scale(1.05);
+  background-color: rgba(255, 255, 255, 0.14);
 }
-
 
 .app-icon img {
-
-    width: 64px;
-
-    height: 64px;
-
-    object-fit: cover;
-
-    border-radius: 16px;
-
-    display: block;
-
-    margin: auto;
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,0.4);
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
-
 
 .app-icon p {
-
-    margin:
-        7px 0 0;
-
-    font-size: 13px;
-
-    opacity: 0.9;
+  margin-top: 7px;
+  font-size: 13px;
+  color: white;
 }
 
-
-/* =========================
-   TIMELINE ICON
-========================= */
-
+/* icon for the timeline app */
 .project-icon {
-
-    width: 64px;
-
-    height: 64px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 34px;
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #222,
-            #555
-        );
-
-    box-shadow:
-        0 8px 20px
-        rgba(0,0,0,0.4);
+  width: 64px;
+  height: 64px;
+  background-color: #333;
+  border-radius: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 64px;
+  font-size: 34px;
 }
 
-
-/* =========================
-   WINDOWS
-========================= */
-
+/* general window style, used for all 3 windows */
 .window {
-
-    position: absolute;
-
-    display: flex;
-
-    flex-direction: column;
-
-    border-radius: 24px;
-
-    background:
-        rgba(20,20,20,0.94);
-
-    color: white;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.15);
-
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,0.6);
-
-    backdrop-filter:
-        blur(12px);
-
-    overflow: hidden;
+  background-color: #151515;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 18px;
+  position: absolute;
+  overflow: hidden;
 }
-
-
-/* =========================
-   WELCOME WINDOW
-========================= */
 
 .welcome-window {
-
-    width: 900px;
-
-    top: 120px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    z-index: 2;
+  width: 900px;
+  top: 120px;
+  left: 50%;
+  margin-left: -450px;
+  z-index: 2;
 }
-
-
-/* =========================
-   WINDOW HEADER
-========================= */
 
 .window-header {
-
-    width: 100%;
-
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding:
-        0 18px;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.1);
-
-    cursor: grab;
-
-    user-select: none;
-
-    font-weight: bold;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-bottom: 1px solid #333;
+  font-weight: bold;
+  cursor: pointer;
 }
-
-
-.window-header:active {
-
-    cursor: grabbing;
-}
-
-
-/* =========================
-   CLOSE BUTTON
-========================= */
 
 .close-button {
-
-    width: 15px;
-
-    height: 15px;
-
-    border-radius: 50%;
-
-    background:
-        #ff5f57;
-
-    cursor: pointer;
-
-    transition:
-        0.2s;
+  width: 15px;
+  height: 15px;
+  background-color: #ff5f57;
+  border-radius: 50%;
+  cursor: pointer;
 }
-
 
 .close-button:hover {
-
-    transform:
-        scale(1.2);
-
-    box-shadow:
-        0 0 12px
-        rgba(255,95,87,0.7);
+  transform: scale(1.15);
 }
-
-
-/* =========================
-   WELCOME CONTENT
-========================= */
 
 .window-content {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 40px;
-
-    padding: 38px;
+  display: flex;
+  align-items: center;
+  padding: 36px;
 }
-
 
 .welcome-image {
-
-    width: 320px;
-
-    height: 240px;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 12px 30px
-        rgba(0,0,0,0.45);
+  width: 320px;
+  height: 240px;
+  border-radius: 16px;
+  margin-right: 35px;
 }
-
 
 .welcome-text {
-
-    flex: 1;
+  width: 100%;
 }
-
 
 .badge {
-
-    display: inline-block;
-
-    padding:
-        6px 12px;
-
-    border-radius:
-        20px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    background:
-        rgba(255,255,255,0.1);
+  background-color: #333;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
 }
-
 
 h1 {
-
-    font-size: 44px;
-
-    margin:
-        14px 0 8px;
+  font-size: 44px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  color: white;
 }
-
 
 h2 {
-
-    font-size: 20px;
-
-    font-weight: normal;
-
-    opacity: 0.7;
+  font-size: 20px;
+  font-weight: normal;
+  color: #cccccc;
 }
-
 
 p {
-
-    line-height: 1.6;
-
-    opacity: 0.72;
+  line-height: 1.6;
+  color: #cccccc;
 }
-
-
-/* =========================
-   BUTTON
-========================= */
 
 button {
-
-    margin-top: 18px;
-
-    padding:
-        13px 23px;
-
-    border: none;
-
-    border-radius:
-        12px;
-
-    background: white;
-
-    color: black;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        0.2s;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 18px;
 }
-
 
 button:hover {
-
-    transform:
-        scale(1.05);
+  background-color: #dddddd;
 }
 
-
-/* =========================
-   JOURNAL WINDOW
-========================= */
-
+/* journal window */
 .journal-window {
-
-    width: 850px;
-
-    height: 560px;
-
-    top: 100px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    display: none;
-
-    z-index: 3;
+  width: 850px;
+  height: 560px;
+  top: 100px;
+  left: 50%;
+  margin-left: -425px;
+  display: none;
+  z-index: 3;
 }
-
 
 .journal-content {
-
-    display: flex;
-
-    flex: 1;
-
-    min-height: 0;
-
-    padding: 10px;
-
-    gap: 10px;
+  display: flex;
+  padding: 10px;
+  height: 90%;
 }
-
-
-/* =========================
-   JOURNAL SIDEBAR
-========================= */
 
 .journal-sidebar {
-
-    width: 210px;
-
-    padding: 8px;
-
-    border-radius: 16px;
-
-    background:
-        rgba(255,255,255,0.06);
-
-    overflow-y: auto;
+  width: 210px;
+  background-color: #292929;
+  border-radius: 14px;
+  padding: 8px;
+  margin-right: 10px;
+  overflow-y: auto;
 }
-
 
 .note-item {
-
-    padding: 12px;
-
-    margin-bottom: 8px;
-
-    border-radius: 12px;
-
-    cursor: pointer;
-
-    transition:
-        0.2s;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
-
 
 .note-item:hover {
-
-    background:
-        rgba(255,255,255,0.12);
+  background-color: #444;
 }
-
 
 .note-item.active {
-
-    background:
-        rgba(255,255,255,0.2);
+  background-color: #555;
 }
-
 
 .note-item-title {
-
-    margin: 0;
-
-    font-weight: bold;
+  font-weight: bold;
 }
-
 
 .note-item-date {
-
-    margin:
-        5px 0 0;
-
-    font-size: 11px;
-
-    opacity: 0.55;
+  font-size: 11px;
+  color: #999;
+  margin-top: 5px;
 }
-
-
-/* =========================
-   NOTE AREA
-========================= */
 
 .note-area {
-
-    flex: 1;
-
-    padding: 25px;
-
-    border-radius: 16px;
-
-    background:
-        rgba(255,255,255,0.96);
-
-    color: #171717;
-
-    overflow-y: auto;
+  background-color: #f4f4f4;
+  color: #171717;
+  border-radius: 14px;
+  padding: 25px;
+  width: 100%;
+  overflow-y: auto;
 }
-
 
 .note-area h2 {
-
-    color: #171717;
-
-    margin-top: 0;
-
-    font-size: 28px;
-
-    opacity: 1;
+  color: #171717;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
-
 
 .note-area p {
-
-    color: #333;
-
-    opacity: 1;
-
-    line-height: 1.7;
+  color: #333333;
 }
-
 
 .note-area blockquote {
-
-    margin:
-        25px 0;
-
-    padding:
-        15px 20px;
-
-    border-left:
-        4px solid #777;
-
-    background:
-        #eeeeee;
+  background-color: #eeeeee;
+  border-left: 4px solid #777;
+  padding: 15px 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
-
-/* =========================
-   CR7 TIMELINE WINDOW
-========================= */
-
+/* CR7 timeline window */
 .project-window {
-
-    width: 850px;
-
-    height: 600px;
-
-    top: 90px;
-
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-
-    display: none;
-
-    z-index: 4;
+  width: 850px;
+  height: 600px;
+  top: 90px;
+  left: 50%;
+  margin-left: -425px;
+  display: none;
+  z-index: 4;
 }
-
-
-/* =========================
-   TIMELINE CONTENT
-========================= */
 
 .timeline-content {
-
-    flex: 1;
-
-    padding:
-        30px 45px;
-
-    overflow-y: auto;
+  padding: 30px 45px;
+  overflow-y: auto;
+  height: 90%;
 }
-
-
-/* =========================
-   TIMELINE TITLE
-========================= */
 
 .timeline-title {
-
-    margin-bottom: 28px;
+  margin-bottom: 28px;
 }
-
 
 .timeline-badge {
-
-    display: inline-block;
-
-    padding:
-        6px 12px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,0.1);
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
+  background-color: #333;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
 }
-
 
 .timeline-title h1 {
-
-    font-size: 38px;
-
-    margin:
-        12px 0 3px;
+  font-size: 38px;
+  margin-top: 12px;
+  margin-bottom: 3px;
 }
-
 
 .timeline-title p {
-
-    margin: 0;
-
-    color: #aaa;
+  color: #aaaaaa;
+  margin: 0;
 }
 
-
-/* =========================
-   TIMELINE
-========================= */
-
+/* vertical line of the timeline */
 .timeline {
-
-    position: relative;
-
-    margin-left: 35px;
-
-    padding-left: 35px;
+  margin-left: 35px;
+  padding-left: 35px;
+  border-left: 3px solid #777;
 }
-
-
-.timeline::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    bottom: 0;
-
-    width: 3px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff,
-            rgba(255,255,255,0.15)
-        );
-
-    border-radius: 5px;
-}
-
-
-/* =========================
-   TIMELINE ITEM
-========================= */
 
 .timeline-item {
-
-    position: relative;
-
-    margin-bottom: 28px;
+  margin-bottom: 28px;
+  position: relative;
 }
 
-
+/* circle next to each timeline item */
 .timeline-dot {
-
-    position: absolute;
-
-    left: -45px;
-
-    top: 18px;
-
-    width: 17px;
-
-    height: 17px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    border:
-        4px solid #333;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(255,255,255,0.15);
-
-    z-index: 2;
+  width: 17px;
+  height: 17px;
+  background-color: white;
+  border: 4px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  left: -45px;
+  top: 18px;
 }
-
-
-/* =========================
-   YEAR
-========================= */
 
 .timeline-year {
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    color: #aaa;
-
-    margin-bottom: 7px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #aaaaaa;
+  margin-bottom: 7px;
 }
-
-
-/* =========================
-   TIMELINE CARD
-========================= */
 
 .timeline-card {
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255,255,255,0.07);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
-
-    transition:
-        transform 0.2s,
-        background 0.2s;
+  background-color: #292929;
+  border: 1px solid #444;
+  border-radius: 14px;
+  padding: 18px;
 }
-
 
 .timeline-card:hover {
-
-    transform:
-        translateX(5px);
-
-    background:
-        rgba(255,255,255,0.12);
+  background-color: #353535;
+  transform: translateX(4px);
 }
-
 
 .timeline-card h2 {
-
-    margin:
-        0 0 7px;
-
-    color: white;
-
-    font-size: 21px;
-
-    opacity: 1;
+  color: white;
+  font-size: 21px;
+  margin-bottom: 7px;
 }
-
 
 .timeline-card p {
-
-    margin: 0;
-
-    color: #bbb;
-
-    line-height: 1.6;
+  color: #bbbbbb;
+  margin: 0;
 }
-
-
-/* =========================
-   CLUB TAG
-========================= */
 
 .timeline-tag {
-
-    display: inline-block;
-
-    margin-top: 12px;
-
-    padding:
-        5px 10px;
-
-    border-radius: 10px;
-
-    background:
-        rgba(255,255,255,0.1);
-
-    font-size: 11px;
-
-    color: #ddd;
+  background-color: #3b3b3b;
+  color: #dddddd;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  margin-top: 12px;
+  display: inline-block;
 }
 
-
-/* =========================
-   FINAL LEGACY CARD
-========================= */
-
+/* final timeline card */
 .timeline-final {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.14),
-            rgba(255,255,255,0.05)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,0.2);
+  background-color: #3a3a3a;
+  border: 1px solid #666;
 }
-
 
 .timeline-final h2 {
-
-    font-size: 25px;
+  font-size: 25px;
 }
 
-
-/* =========================
-   SCROLLBAR
-========================= */
-
+/* scrollbar */
 ::-webkit-scrollbar {
-
-    width: 8px;
+  width: 8px;
 }
-
 
 ::-webkit-scrollbar-track {
-
-    background:
-        rgba(255,255,255,0.04);
+  background-color: rgba(255, 255, 255, 0.04);
 }
-
 
 ::-webkit-scrollbar-thumb {
-
-    background:
-        rgba(255,255,255,0.2);
-
-    border-radius: 10px;
+  background-color: #555;
+  border-radius: 10px;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* smaller screens */
 @media (max-width: 950px) {
+  .welcome-window {
+    width: 90%;
+  }
 
-    .welcome-window,
-    .journal-window,
-    .project-window {
+  .journal-window {
+    width: 90%;
+  }
 
-        width: 90%;
-    }
+  .project-window {
+    width: 90%;
+  }
 
-
-    .window-content {
-
-        gap: 20px;
-    }
-
-
-    .welcome-image {
-
-        width: 40%;
-
-        height: 200px;
-    }
-
+  .welcome-image {
+    width: 40%;
+    height: 200px;
+  }
 }
