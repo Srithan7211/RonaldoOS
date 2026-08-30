@@ -243,117 +243,105 @@ projectScreen.addEventListener(
     }
 );
 
-
-
 /* =========================
    DRAGGING
 ========================= */
 
 function dragElement(element) {
 
-    let initialX = 0;
+    const header = document.getElementById(
+        element.id + "header"
+    );
 
-    let initialY = 0;
+    if (!header) {
+        return;
+    }
 
+    let startX;
+    let startY;
+    let startLeft;
+    let startTop;
 
-    const header =
-        document.getElementById(
-            element.id + "header"
+    header.addEventListener("mousedown", function(e) {
+
+        e.preventDefault();
+
+        // Bring window to the front
+        handleWindowTap(element);
+
+        const rect = element.getBoundingClientRect();
+
+        // Remove the centering transform
+        element.style.transform = "none";
+
+        // Keep the window exactly where it already is
+        element.style.left = rect.left + "px";
+        element.style.top = rect.top + "px";
+
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = rect.left;
+        startTop = rect.top;
+
+        function moveWindow(e) {
+
+            let newLeft =
+                startLeft + (e.clientX - startX);
+
+            let newTop =
+                startTop + (e.clientY - startY);
+
+            // Keep the window on the screen
+            const maxLeft =
+                window.innerWidth - element.offsetWidth;
+
+            const maxTop =
+                window.innerHeight - element.offsetHeight;
+
+            newLeft = Math.max(
+                0,
+                Math.min(newLeft, maxLeft)
+            );
+
+            newTop = Math.max(
+                60,
+                Math.min(newTop, maxTop)
+            );
+
+            element.style.left = newLeft + "px";
+            element.style.top = newTop + "px";
+        }
+
+        function stopDragging() {
+
+            document.removeEventListener(
+                "mousemove",
+                moveWindow
+            );
+
+            document.removeEventListener(
+                "mouseup",
+                stopDragging
+            );
+        }
+
+        document.addEventListener(
+            "mousemove",
+            moveWindow
         );
 
+        document.addEventListener(
+            "mouseup",
+            stopDragging
+        );
 
-    if (header) {
-
-        header.onmousedown =
-            startDragging;
-
-    }
-
-
-    function startDragging(e) {
-
-        e.preventDefault();
-
-        initialX =
-            e.clientX;
-
-        initialY =
-            e.clientY;
-
-        document.onmouseup =
-            stopDragging;
-
-        document.onmousemove =
-            drag;
-
-    }
-
-
-    function drag(e) {
-
-        e.preventDefault();
-
-
-        const currentX =
-            initialX - e.clientX;
-
-        const currentY =
-            initialY - e.clientY;
-
-
-        initialX =
-            e.clientX;
-
-        initialY =
-            e.clientY;
-
-
-        element.style.top =
-            (
-                element.offsetTop -
-                currentY
-            ) + "px";
-
-
-        element.style.left =
-            (
-                element.offsetLeft -
-                currentX
-            ) + "px";
-
-
-        element.style.transform =
-            "none";
-
-    }
-
-
-    function stopDragging() {
-
-        document.onmouseup =
-            null;
-
-        document.onmousemove =
-            null;
-
-    }
-
+    });
 }
 
 
-dragElement(
-    welcomeScreen
-);
-
-dragElement(
-    journalScreen
-);
-
-dragElement(
-    projectScreen
-);
-
-
+dragElement(welcomeScreen);
+dragElement(journalScreen);
+dragElement(projectScreen);
 
 /* =========================
    CR7 JOURNAL
